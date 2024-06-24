@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hello {
+  min-height: 100vh;
+  padding: 24px 0;
+}
+
+.hello__container {
+  margin: auto;
+  max-width: 640px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hello__title {
+  color: blue;
+  margin-bottom: 12px;
+}
+
+.hello__subtitle {
+  color: darkslategrey;
+  margin-bottom: 12px;
+}

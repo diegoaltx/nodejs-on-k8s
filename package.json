@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-on-k8s",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  }
+}

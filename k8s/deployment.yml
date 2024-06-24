@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-on-k8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-on-k8s
+  template:
+    metadata:
+      labels:
+        app: nodejs-on-k8s
+    spec:
+      containers:
+      - image: ghcr.io/diegoaltx/nodejs-on-k8s:latest
+        name: nodejs-on-k8s
+        ports:
+        - containerPort: 3000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
